@@ -19,8 +19,7 @@ class UserCubit extends Cubit<UserState> {
 
       final modelApi = await userRepo.getRandomUser();
 
-      log('МОДЕЛ ВОЗВРАШАЕТ НАМ? ${modelApi}');
-      print(' ${modelApi.results}');
+      log('МОДЕЛ ВОЗВРАШАЕТ НАМ? $modelApi');
       emit(SuccesState(model: modelApi));
 
       log('ПРИШЛО ДАННЫЕ }');

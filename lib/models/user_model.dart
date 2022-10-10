@@ -5,8 +5,8 @@ class UserModel {
   List<Results>? results;
    Info? info;
 
-  UserModel({this.results,
-    this.info
+  UserModel({results,
+    info
    });
 
   UserModel.fromJson(Map<String, dynamic> json) {
@@ -24,8 +24,8 @@ class UserModel {
     if (results != null) {
       data['results'] = results!.map((v) => v.toJson()).toList();
     }
-     if (this.info != null) {
-       data['info'] = this.info!.toJson();
+     if (info != null) {
+       data['info'] = info!.toJson();
      }
     return data;
   }
@@ -46,18 +46,18 @@ class Results {
   String? nat;
 
   Results(
-      {this.gender,
-      this.name,
-      this.location,
-      this.email,
-       this.login,
-       this.dob,
-       this.registered,
-      this.phone,
-      this.cell,
-      this.id,
-       this.picture,
-      this.nat});
+      {gender,
+      name,
+      location,
+      email,
+       login,
+       dob,
+       registered,
+      phone,
+      cell,
+      id,
+       picture,
+      nat});
 
   Results.fromJson(Map<String, dynamic> json) {
     gender = json['gender'];
@@ -89,22 +89,22 @@ class Results {
       data['location'] = location!.toJson();
     }
     data['email'] = email;
-     if (this.login != null) {
-       data['login'] = this.login!.toJson();
+     if (login != null) {
+       data['login'] = login!.toJson();
      }
-     if (this.dob != null) {
-       data['dob'] = this.dob!.toJson();
+     if (dob != null) {
+       data['dob'] = dob!.toJson();
      }
-     if (this.registered != null) {
-       data['registered'] = this.registered!.toJson();
+     if (registered != null) {
+       data['registered'] = registered!.toJson();
      }
     data['phone'] = phone;
     data['cell'] = cell;
     if (id != null) {
       data['id'] = id!.toJson();
     }
-     if (this.picture != null) {
-       data['picture'] = this.picture!.toJson();
+     if (picture != null) {
+       data['picture'] = picture!.toJson();
      }
     data['nat'] = nat;
     return data;
@@ -116,7 +116,7 @@ class Name {
   String? first;
   String? last;
 
-  Name({this.title, this.first, this.last});
+  Name({title, first, last});
 
   Name.fromJson(Map<String, dynamic> json) {
     title = json['title'];
@@ -143,13 +143,13 @@ class Location {
    Timezone? timezone;
 
   Location(
-      {this.street,
-      this.city,
-      this.state,
-      this.country,
-      this.postcode,
-      this.coordinates,
-       this.timezone
+      {street,
+      city,
+      state,
+      country,
+      postcode,
+      coordinates,
+       timezone
       }
       );
 
@@ -180,8 +180,8 @@ class Location {
     if (coordinates != null) {
       data['coordinates'] = coordinates!.toJson();
     }
-     if (this.timezone != null) {
-       data['timezone'] = this.timezone!.toJson();
+     if (timezone != null) {
+       data['timezone'] = timezone!.toJson();
      }
     return data;
   }
@@ -191,7 +191,7 @@ class Street {
   int? number;
   String? name;
 
-  Street({this.number, this.name});
+  Street({number, name});
 
   Street.fromJson(Map<String, dynamic> json) {
     number = json['number'];
@@ -210,7 +210,7 @@ class Coordinates {
   String? latitude;
   String? longitude;
 
-  Coordinates({this.latitude, this.longitude});
+  Coordinates({latitude, longitude});
 
   Coordinates.fromJson(Map<String, dynamic> json) {
     latitude = json['latitude'];
@@ -229,7 +229,7 @@ class Coordinates {
    String? offset;
    String? description;
 
-   Timezone({this.offset, this.description});
+   Timezone({offset, description});
 
    Timezone.fromJson(Map<String, dynamic> json) {
      offset = json['offset'];
@@ -237,9 +237,9 @@ class Coordinates {
    }
 
    Map<String, dynamic> toJson() {
-     final Map<String, dynamic> data =  Map<String, dynamic>();
-     data['offset'] = this.offset;
-     data['description'] = this.description;
+     final Map<String, dynamic> data =  <String, dynamic>{};
+     data['offset'] = offset;
+     data['description'] = description;
      return data;
    }
  }
@@ -254,13 +254,13 @@ class Coordinates {
    String? sha256;
 
    Login(
-       {this.uuid,
-       this.username,
-       this.password,
-       this.salt,
-       this.md5,
-       this.sha1,
-       this.sha256});
+       {uuid,
+       username,
+       password,
+       salt,
+       md5,
+       sha1,
+       sha256});
 
    Login.fromJson(Map<String, dynamic> json) {
      uuid = json['uuid'];
@@ -273,14 +273,14 @@ class Coordinates {
    }
 
    Map<String, dynamic> toJson() {
-     final Map<String, dynamic> data =  Map<String, dynamic>();
-     data['uuid'] = this.uuid;
-     data['username'] = this.username;
-     data['password'] = this.password;
-     data['salt'] = this.salt;
-     data['md5'] = this.md5;
-     data['sha1'] = this.sha1;
-     data['sha256'] = this.sha256;
+     final Map<String, dynamic> data =  <String, dynamic>{};
+     data['uuid'] = uuid;
+     data['username'] = username;
+     data['password'] = password;
+     data['salt'] = salt;
+     data['md5'] = md5;
+     data['sha1'] = sha1;
+     data['sha256'] = sha256;
      return data;
    }
  }
@@ -289,7 +289,7 @@ class Coordinates {
    String? date;
    int? age;
 
-   Dob({this.date, this.age});
+   Dob({date, age});
 
    Dob.fromJson(Map<String, dynamic> json) {
      date = json['date'];
@@ -297,9 +297,9 @@ class Coordinates {
    }
 
    Map<String, dynamic> toJson() {
-     final Map<String, dynamic> data =  Map<String, dynamic>();
-     data['date'] = this.date;
-     data['age'] = this.age;
+     final Map<String, dynamic> data =  <String, dynamic>{};
+     data['date'] = date;
+     data['age'] = age;
      return data;
    }
  }
@@ -308,7 +308,7 @@ class Id {
   String? name;
   String? value;
 
-  Id({this.name, this.value});
+  Id({name, value});
 
   Id.fromJson(Map<String, dynamic> json) {
     name = json['name'];
@@ -328,7 +328,7 @@ class Id {
    String? medium;
    String? thumbnail;
 
-   Picture({this.large, this.medium, this.thumbnail});
+   Picture({large, medium, thumbnail});
 
    Picture.fromJson(Map<String, dynamic> json) {
      large = json['large'];
@@ -337,10 +337,10 @@ class Id {
    }
 
    Map<String, dynamic> toJson() {
-     final Map<String, dynamic> data =  Map<String, dynamic>();
-     data['large'] = this.large;
-     data['medium'] = this.medium;
-     data['thumbnail'] = this.thumbnail;
+     final Map<String, dynamic> data =  <String, dynamic>{};
+     data['large'] = large;
+     data['medium'] = medium;
+     data['thumbnail'] = thumbnail;
      return data;
    }
  }
@@ -351,7 +351,7 @@ class Id {
    int? page;
    String? version;
 
-   Info({this.seed, this.results, this.page, this.version});
+   Info({seed, results, page, version});
 
    Info.fromJson(Map<String, dynamic> json) {
      seed = json['seed'];
@@ -361,11 +361,11 @@ class Id {
    }
 
    Map<String, dynamic> toJson() {
-     final Map<String, dynamic> data =  Map<String, dynamic>();
-     data['seed'] = this.seed;
-     data['results'] = this.results;
-     data['page'] = this.page;
-     data['version'] = this.version;
+     final Map<String, dynamic> data =  <String, dynamic>{};
+     data['seed'] = seed;
+     data['results'] = results;
+     data['page'] = page;
+     data['version'] = version;
      return data;
    }
  }

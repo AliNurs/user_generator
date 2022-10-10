@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:user_generator/cubit/user_cubit.dart';
-import 'package:user_generator/repositories/dio_settings.dart';
-import 'package:user_generator/repositories/user_repo.dart';
+
 import 'package:user_generator/screens/widgets/icon_button.dart';
 import 'package:user_generator/screens/widgets/text_buttons.dart';
 
@@ -32,20 +31,20 @@ class _UserScreenState extends State<UserScreen> {
               padding: const EdgeInsets.all(18),
               children: [
                 const SizedBox(height: 60),
-                CircleAvatar(
+                const CircleAvatar(
                   radius: 85,
                   foregroundImage: NetworkImage(
-                      state.model.results?[0].picture?.medium ?? ""
-                      // 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMma1RsDUuSNsB1CLxhrSbNJH9OApmgGQndQ&usqp=CAU',
-                      ),
+                    // state.model.results?[0].picture?.medium ?? ""
+                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMma1RsDUuSNsB1CLxhrSbNJH9OApmgGQndQ&usqp=CAU',
+                  ),
                 ),
                 const SizedBox(height: 20),
                 Text(
-                  // state.model.results?[0].name?.first ?? 'им',
-                  'Nursultan Guljigit uulu',
+                  // state.model.results[].name??'',
+                  state.model.results![1].name?.first ?? 'им',
+                  // 'Nursultan Guljigit uulu',
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
-                      fontWeight: FontWeight.bold, fontSize: 25),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
                 ),
                 const SizedBox(height: 10),
                 const Text(
